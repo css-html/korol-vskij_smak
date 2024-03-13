@@ -1,0 +1,32 @@
+/* .c_button
+-------------------------------------------------------------*/
+$r: ".c_button";
+
+// block
+//-----------------------------------------------------------
+#{$r} {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  line-height: 1;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  border-radius: 100vw;
+  padding-inline: 1.5rem;
+  background-color: var(--yellow-000);
+  box-shadow: 0px 0px 4px 0px rgba(31, 44, 56, 0.08);
+
+  &:disabled {
+    cursor: not-allowed;
+    color: var(--gray-100);
+    background-color: var(--gray-000);
+  }
+
+  // element
+  //---------------------------------------------------------
+
+  // modifier
+  //---------------------------------------------------------
+}

@@ -1,0 +1,16 @@
+/* storybook
+-------------------------------------------------------------*/
+.docblock-argstable {
+  [type="radio"] {
+    appearance: auto;
+  }
+}
+
+#storybook-root {
+  padding: 0 !important;
+  margin: auto !important;
+}
+
+[data-name="Primary"] > * {
+  margin: 0 !important;
+}

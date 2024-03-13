@@ -1,0 +1,41 @@
+/* .c_info
+-------------------------------------------------------------*/
+$r: ".c_info";
+
+// block
+//-----------------------------------------------------------
+#{$r} {
+  gap: 1rem;
+  display: grid;
+
+  @media (max-width: 64rem) {
+    margin-top: -12vw;
+  }
+
+  @media (min-width: 64.0625rem) {
+    margin-top: -6vw;
+  }
+
+  // element
+  //---------------------------------------------------------
+  &__img {
+    margin: auto;
+
+    ~ * {
+      text-align: center;
+    }
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    line-height: 1.875rem;
+    font-family: "YesevaOne";
+  }
+
+  &__text {
+    color: var(--gray-200);
+  }
+
+  // modifier
+  //---------------------------------------------------------
+}

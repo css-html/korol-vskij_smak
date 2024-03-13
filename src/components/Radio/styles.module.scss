@@ -1,0 +1,92 @@
+/* .c_radio
+-------------------------------------------------------------*/
+$r: ".c_radio";
+
+// block
+//-----------------------------------------------------------
+#{$r} {
+  display: inline-flex;
+  cursor: pointer;
+
+  // element
+  //---------------------------------------------------------
+  input {
+    flex: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+    position: relative;
+    border-radius: 100%;
+    border: 0.125rem solid var(--gray-200);
+
+    &::before {
+      content: "";
+      inset: 0.188rem;
+      position: absolute;
+      border-radius: 100%;
+      background-color: var(--gray-200);
+      opacity: 0;
+      transform: scale(0);
+      transition:
+        opacity 0.15s,
+        transform 0.15s;
+    }
+
+    &:checked::before {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      border-color: var(--gray-100);
+
+      &::before {
+        background-color: var(--gray-100);
+      }
+
+      ~ #{$r}__title {
+        color: var(--gray-200);
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  &__title {
+    color: var(--gray-200);
+    cursor: pointer;
+    font-weight: 600;
+    line-height: 1.5rem;
+    padding-left: 0.5rem;
+  }
+
+  // modifier
+  //---------------------------------------------------------
+  &[class*="No"] {
+    input:not(:disabled):checked {
+      border-color: var(--red-000);
+
+      &::before {
+        background-color: var(--red-000);
+      }
+
+      ~ #{$r}__title {
+        color: var(--red-000);
+      }
+    }
+  }
+
+  &[class*="Yes"] {
+    input:not(:disabled):checked {
+      border-color: var(--green-000);
+
+      &::before {
+        background-color: var(--green-000);
+      }
+
+      ~ #{$r}__title {
+        color: var(--green-000);
+      }
+    }
+  }
+}
